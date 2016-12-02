@@ -21,10 +21,10 @@ extension UIView
     
     @IBInspectable var borderColor: UIColor? {
         get {
-            return UIColor(CGColor: self.layer.borderColor!)
+            return UIColor(cgColor: self.layer.borderColor!)
         }
         set {
-            self.layer.borderColor = newValue?.CGColor
+            self.layer.borderColor = newValue?.cgColor
         }
     }
     
@@ -49,8 +49,8 @@ extension UIView
             
             let views = ["line": line]
             let metrics = ["lineWidth": newValue]
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[line(==lineWidth)]", options: [], metrics: metrics, views: views))
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[line]|", options: [], metrics: nil, views: views))
+            self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[line(==lineWidth)]", options: [], metrics: metrics, views: views))
+            self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[line]|", options: [], metrics: nil, views: views))
         }
     }
     
@@ -66,8 +66,8 @@ extension UIView
             
             let views = ["line": line]
             let metrics = ["lineWidth": newValue]
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[line]|", options: [], metrics: nil, views: views))
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[line(==lineWidth)]", options: [], metrics: metrics, views: views))
+            self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[line]|", options: [], metrics: nil, views: views))
+            self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[line(==lineWidth)]", options: [], metrics: metrics, views: views))
         }
     }
     
@@ -83,8 +83,8 @@ extension UIView
             
             let views = ["line": line]
             let metrics = ["lineWidth": newValue]
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("[line(==lineWidth)]|", options: [], metrics: metrics, views: views))
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:|[line]|", options: [], metrics: nil, views: views))
+            self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "[line(==lineWidth)]|", options: [], metrics: metrics, views: views))
+            self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:|[line]|", options: [], metrics: nil, views: views))
         }
     }
     
@@ -100,8 +100,8 @@ extension UIView
             
             let views = ["line": line]
             let metrics = ["lineWidth": newValue]
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("|[line]|", options: [], metrics: nil, views: views))
-            self.addConstraints(NSLayoutConstraint.constraintsWithVisualFormat("V:[line(==lineWidth)]|", options: [], metrics: metrics, views: views))
+            self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "|[line]|", options: [], metrics: nil, views: views))
+            self.addConstraints(NSLayoutConstraint.constraints(withVisualFormat: "V:[line(==lineWidth)]|", options: [], metrics: metrics, views: views))
         }
     }
 }
